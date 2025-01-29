@@ -1,0 +1,55 @@
+.test-left {
+  background-image: radial-gradient(
+    circle,
+    #482948d9,
+    1px,
+    rgba(0, 0, 0, 0.1) 1px
+  );
+  background-size: 1rem 1rem;
+}
+.test-border {
+  border-width: 0.5px;
+  border-image: linear-gradient(to, right, #0acbd2 0% #0d2df9 100%) 1;
+}
+.lower-half {
+  background-image: radial-gradient(circle, #1d131d, 1px, rgb(0 0 0 / 52%) 1px);
+  background-size: 1rem 1rem;
+}
+.test-tools:hover {
+  box-shadow: 12px 12px 10px rgb(36 36 102 / 80%);
+}
+
+.test-tools {
+  box-shadow: -0.2px -0.2px rgba(255, 255, 255, 1);
+}
+
+.test-exp {
+  box-shadow: -0.4px -0.4px 2px rgba(255, 255, 255, 1);
+}
+.test-exp:hover {
+  box-shadow: 8px 8px 10px rgb(36 36 102 / 80%);
+}
+
+/* PROJECT PAGE */
+.project-page-title:last-child {
+  color: rgba(63, 63, 70, 1);
+}
+
+.right-panel-heading span {
+  color: rgba(63, 63, 70, 1);
+}
+
+.lower-half {
+  background-image: radial-gradient(circle, #4c4122, 1px, rgb(0 0 0) 1px);
+  background-size: 1rem 1rem;
+}
+
+.test-left {
+  background-image: radial-gradient(
+    circle,
+    #482948d9,
+    1px,
+    rgb(255 255 255) 1px
+  );
+  background-size: 1rem 1rem;
+}
