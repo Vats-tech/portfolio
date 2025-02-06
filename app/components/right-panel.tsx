@@ -65,9 +65,9 @@ const RightPanel = () => {
         {ts(right_panel_subtitle)}
       </p>
       {numericModule}
-      <ExperiencePage styles="mt-8" />
-      <ProjectPage styles="mt-8" />
-      <ToolsPage styles="mt-8" />
+      <ExperiencePage classes="mt-8" />
+      <ProjectPage classes="mt-8" />
+      <ToolsPage classes="mt-8" />
     </>
   );
 };
