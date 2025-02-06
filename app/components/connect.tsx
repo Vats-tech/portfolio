@@ -35,18 +35,22 @@ const email_input_box_placeholder = defineMessage(
   /**Placeholder label for email input box */
 );
 
-const Connect = () => {
+interface ConnectTypes {
+  styles?: string;
+}
+
+const Connect = ({ ...props }: ConnectTypes) => {
   const ts = useTs();
 
   return (
-    <div className="mt-8">
+    <div className={props.styles}>
       <h1
         className="text-[54px] leading-[54px] lg:text-[90px] lg:leading-[90px] font-black [&>span]:text-zinc-500"
         dangerouslySetInnerHTML={{ __html: ts(connect_module_heading) }}
       />
       <form
         action=""
-        className="border border-zinc-800 rounded-xl mt-4 p-6 text-sm text-start mx-4"
+        className="border border-zinc-800 rounded-xl mt-4 p-6 text-sm text-start"
       >
         <div className="flex flex-col gap-5">
           <div className="w-full flex flex-col gap-3">

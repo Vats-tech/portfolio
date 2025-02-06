@@ -1,13 +1,15 @@
 interface IconsType {
   id: string;
+  width?: string;
+  height?: string;
   classes?: string;
 }
 
-const Icons = ({ id, classes }: IconsType) => {
+const Icons = ({ id, classes, width = "20", height = "20" }: IconsType) => {
   return (
     <svg
-      width={20}
-      height={20}
+      width={width}
+      height={height}
       className={classes}
       fill="currentColor"
       viewBox="0 0 16 16"

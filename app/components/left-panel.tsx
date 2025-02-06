@@ -1,32 +1,10 @@
 import Image from "next/image";
 import Icons from "./icons";
+import Link from "next/link";
 import { montserrat } from "./fonts";
 import { useTs } from "../utils/useTs";
 import { defineMessage } from "../utils/util";
-
-const user_name = defineMessage(
-  "{name}"
-  /* User name label */
-);
-
-const user_role = defineMessage(
-  "{role}"
-  /* User role label */
-);
-
-const user_location = defineMessage(
-  "{city}"
-  /* User location label */
-);
-const user_linkedin = defineMessage(
-  "linkedin.com/in/saurabh-vats"
-  /* User linkedin link */
-);
-
-const user_mail = defineMessage(
-  "test@gmail.com"
-  /* User gmail */
-);
+import { USER_DETAILS } from "../utils/constants";
 
 const lets_talk_btn_label = defineMessage(
   "Let's Talk"
@@ -38,9 +16,9 @@ const LeftPanel = () => {
 
   const userInfo = (
     <>
-      <h1 className="text-3xl">{ts(user_name, { name: "Saurabh Vats" })}</h1>
-      <p>{ts(user_role, { role: "Software Engineer ( FE )" })}</p>
-      <p>{ts(user_location, { city: "Pune" })}</p>
+      <h1 className="text-3xl">{USER_DETAILS.NAME}</h1>
+      <p className="mt-1">{USER_DETAILS.POSITION}</p>
+      <p className="mt-1"> {USER_DETAILS.ADDRESS}</p>
     </>
   );
 
@@ -59,18 +37,43 @@ const LeftPanel = () => {
         className={`lower-half py-7 w-full text-center  ${montserrat.className}`}
       >
         {userInfo}
-        <div className=" flex gap-4 justify-center items-center my-4">
+        <div className="flex gap-4 justify-center items-center mt-6 mb-3">
           <span>
-            <Icons id="linkedin" />
+            <a
+              href="https://www.geeksforgeeks.org/user/1007/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                className="rounded"
+                src="/assets/gfg.png"
+                alt={"gfg logo"}
+                width={20}
+                height={20}
+              />
+            </a>
           </span>
           <span>
-            <Icons id="mail" />
+            <a href={USER_DETAILS.LINKEDIN} target="_blank" rel="noreferrer">
+              <Icons id="linkedin" />
+            </a>
+          </span>
+          <span>
+            <a
+              href={`mailto:${USER_DETAILS.EMAIL}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icons id="mail" width="23" height="23" />
+            </a>
           </span>
         </div>
 
-        <button className="p-2 px-7 bg-[rgb(140,52,255)] rounded-md border border-slate-800">
-          {ts(lets_talk_btn_label)}
-        </button>
+        <Link href="/thoughts">
+          <button className="p-2 px-7 bg-[rgb(140,52,255)] rounded-md border border-slate-800">
+            {ts(lets_talk_btn_label)}
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Thoughts</h1>;
+  return <div></div>;
 }

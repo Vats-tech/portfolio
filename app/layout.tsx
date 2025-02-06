@@ -26,7 +26,7 @@ export default function RootLayout({
             <LeftPanel />
             <div className="mt-8 lg:mt-0 w-full lg:w-[60%] text-center lg:text-start flex-1 whitespace-pre-wrap break-words overflow-aut">
               {children}
-              <Connect />
+              <Connect styles="mt-8" />
             </div>
           </div>
         </div>
