@@ -10,11 +10,11 @@ interface ToolsTypes {
   styles: string;
 }
 
-export default function ToolsPage({ ...props }: ToolsTypes) {
+export default function ToolsPage({ styles }: ToolsTypes) {
   const ts = useTs();
 
   return (
-    <div className={`${props.styles}`}>
+    <div className={styles}>
       <h1 className="text-[54px] leading-[54px] sm:text-[80px] sm:leading-[80px] md:text-[90px] md:leading-[90px] font-black">
         {ts(tools_page_heading)}
       </h1>

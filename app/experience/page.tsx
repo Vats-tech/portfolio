@@ -5,9 +5,9 @@ interface ExperienceTypes {
   styles: string;
 }
 
-export default function ExperiencePage({ ...props }: ExperienceTypes) {
+export default function ExperiencePage({ styles }: ExperienceTypes) {
   return (
-    <div className={`${props.styles}`}>
+    <div className={styles}>
       <h1 className="text-[54px] leading-[54px] sm:text-[80px] sm:leading-[80px] md:text-[90px] md:leading-[90px] font-black">
         <span>+4 YEARS OF </span>
         <span className="text-zinc-700">EXPERIENCE</span>
