@@ -7,9 +7,11 @@ interface Messages {
   [key: string]: string;
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface valuesType {
-  [key: string]: string | number | boolean;
+  [key: string]: any;
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export const useTs = () => {
   const ts = useCallback(
