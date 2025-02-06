@@ -1,14 +1,14 @@
 // The hook for retrieving and formatting messages.
 //  It takes a messages object and returns a function that can be used to retrieve messages by key and format them with values.
 
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 
 interface Messages {
   [key: string]: string;
 }
 
 interface valuesType {
-  [key: string]: any;
+  [key: string]: string | number | boolean;
 }
 
 export const useTs = () => {
@@ -18,8 +18,6 @@ export const useTs = () => {
         console.warn(`Invalid message object provided.`);
         return "";
       }
-
-      const { hasHTML = false } = values;
 
       // Extract the message template from the object
       const message = Object.values(messageObj)[0];
