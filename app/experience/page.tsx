@@ -2,12 +2,12 @@ import { montserrat } from "../components/fonts";
 import { experienceDetails } from "../utils/constants";
 
 interface ExperienceTypes {
-  styles: string;
+  classes?: string;
 }
 
-export default function ExperiencePage({ ...props }: ExperienceTypes) {
+export default function ExperiencePage({ classes }: ExperienceTypes) {
   return (
-    <div className={`${props.styles}`}>
+    <div className={classes}>
       <h1 className="text-[54px] leading-[54px] sm:text-[80px] sm:leading-[80px] md:text-[90px] md:leading-[90px] font-black">
         <span>+4 YEARS OF </span>
         <span className="text-zinc-700">EXPERIENCE</span>

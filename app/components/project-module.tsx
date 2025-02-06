@@ -9,14 +9,7 @@ interface ProjectModuleTypes {
   image: string;
   tags?: string[];
 }
-const ProjectModule = ({
-  name,
-  title,
-  description,
-  link,
-  image,
-  tags,
-}: ProjectModuleTypes) => {
+const ProjectModule = ({ name, title, description }: ProjectModuleTypes) => {
   return (
     <div className="mt-5 h-auto lg:h-[200px] hover:bg-[rgb(140,52,255)] w-full flex items-center rounded-md gap-4 border border-zinc-500 relative">
       <Image

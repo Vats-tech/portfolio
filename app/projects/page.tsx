@@ -7,15 +7,15 @@ import { defineMessage } from "../utils/util";
 const project_page_heading = defineMessage("RECENT <span>PROJECTS</span>");
 
 interface ProjectPageTypes {
-  styles: string;
+  classes?: string;
 }
 
-export default function ProjectPage({ ...props }: ProjectPageTypes) {
+export default function ProjectPage({ classes }: ProjectPageTypes) {
   const ts = useTs();
 
   return (
     <div
-      className={`${props.styles} lg:w-[696px] flex-1 whitespace-pre-wrap break-words overflow-auto`}
+      className={`${classes} lg:w-[696px] flex-1 whitespace-pre-wrap break-words overflow-auto`}
     >
       <h1
         className="project-page-title text-[54px] leading-[54px] sm:text-[80px] sm:leading-[80px] md:text-[90px] md:leading-[90px] font-black [&>span]:text-zinc-500"

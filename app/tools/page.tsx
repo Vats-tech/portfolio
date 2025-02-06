@@ -7,14 +7,14 @@ import { useTs } from "../utils/useTs";
 const tools_page_heading = defineMessage("TOOLS");
 
 interface ToolsTypes {
-  styles: string;
+  classes?: string;
 }
 
-export default function ToolsPage({ ...props }: ToolsTypes) {
+export default function ToolsPage({ classes }: ToolsTypes) {
   const ts = useTs();
 
   return (
-    <div className={`${props.styles}`}>
+    <div className={classes}>
       <h1 className="text-[54px] leading-[54px] sm:text-[80px] sm:leading-[80px] md:text-[90px] md:leading-[90px] font-black">
         {ts(tools_page_heading)}
       </h1>
