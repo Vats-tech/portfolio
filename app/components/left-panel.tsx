@@ -23,7 +23,8 @@ const LeftPanel = () => {
    */
   const showLeftPanel = () => {
     const isHomeRoute = pathname === "/";
-    const isMobileDevice = window.innerWidth < 768;
+    const isMobileDevice =
+      typeof window !== "undefined" && window?.innerWidth < 768;
     return !isMobileDevice || isHomeRoute;
   };
 
