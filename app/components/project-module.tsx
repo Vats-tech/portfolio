@@ -13,7 +13,7 @@ const ProjectModule = ({ name, title, description }: ProjectModuleTypes) => {
   return (
     <div className="mt-5 h-auto lg:h-[200px] hover:bg-[rgb(140,52,255)] w-full flex items-center rounded-md gap-4 border border-zinc-500 relative">
       <Image
-        src={"/project-one.png"}
+        src={"/hue-2.png"}
         className="hidden lg:block h-[100%] object-cover rounded-l-md p-[1px]"
         alt="Next.js Logo"
         width={200}

@@ -1,6 +1,9 @@
+"use client"; // This ensures LeftPanel is client-side
+
 import Image from "next/image";
-import Icons from "./icons";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Icons from "./icons";
 import { montserrat } from "./fonts";
 import { useTs } from "../utils/useTs";
 import { defineMessage } from "../utils/util";
@@ -12,6 +15,21 @@ const lets_talk_btn_label = defineMessage(
 );
 
 const LeftPanel = () => {
+  const pathname = usePathname();
+
+  /**
+   * Show left panel only on home route for mobile device and on each route for desktop devices.
+   * @returns
+   */
+  const showLeftPanel = () => {
+    const isHomeRoute = pathname === "/";
+    const isMobileDevice = window.innerWidth < 768;
+    return !isMobileDevice || isHomeRoute;
+  };
+
+  /**
+   * Hook to format messages
+   */
   const ts = useTs();
 
   const userInfo = (
@@ -22,7 +40,7 @@ const LeftPanel = () => {
     </>
   );
 
-  return (
+  return showLeftPanel() ? (
     <div className="test-left w-full lg:w-[29%] lg:sticky top-10 bg-zinc-950 border border-zinc-700 rounded-xl flex flex-col items-center justify-center gap-8 overflow-hidden h-full">
       <div className="w-full p-12 lg:p-5 flex justify-center items-center">
         <Image
@@ -76,7 +94,7 @@ const LeftPanel = () => {
         </Link>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default LeftPanel;
