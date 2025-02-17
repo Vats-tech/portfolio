@@ -1,5 +1,9 @@
+"use client"; // This ensures LeftPanel is client-side
+
+import { useRef } from "react";
 import { useTs } from "../utils/useTs";
 import { defineMessage } from "../utils/util";
+import emailjs from "@emailjs/browser";
 
 const connect_module_heading = defineMessage(
   "LET&apos;S WORK <span>TOGETHER</span>"
@@ -42,6 +46,31 @@ interface ConnectTypes {
 const Connect = ({ ...props }: ConnectTypes) => {
   const ts = useTs();
 
+  const form = useRef<HTMLFormElement | null>(null);
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          alert("Message Sent Successfully!"); // [TODO] - Replace with a toast
+          form.current?.reset(); // Clear the form
+        },
+        (error) => {
+          console.error("Error:", error);
+          alert("Failed to send message. Try again later."); // [TODO] -Replace with a toast
+        }
+      );
+  };
+
   return (
     <div className={props.styles}>
       <h1
@@ -49,7 +78,8 @@ const Connect = ({ ...props }: ConnectTypes) => {
         dangerouslySetInnerHTML={{ __html: ts(connect_module_heading) }}
       />
       <form
-        action=""
+        ref={form}
+        onSubmit={sendEmail}
         className="border border-zinc-800 rounded-xl mt-4 p-6 text-sm text-start"
       >
         <div className="flex flex-col gap-5">
@@ -80,6 +110,7 @@ const Connect = ({ ...props }: ConnectTypes) => {
             <textarea
               required
               rows={6}
+              name="message"
               placeholder={`${ts(message_label)}`}
               className="mt-3 rounded-md bg-zinc-700 w-full p-2"
             ></textarea>
