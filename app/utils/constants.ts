@@ -24,7 +24,7 @@ export const experienceDetails = [
     from: "July 2021",
     to: "October 2023",
     description:
-      "Worked on the development of UI for LinkedIn’s customer support tools across multiple microfrontends. Published features for administration, labelling tools and more, providing company-wide visibility into users, departments, roles, and permissions. Crafted accessible web applications, ensuring inclusivity for users with diverse needs.",
+      "Developed LinkedIn’s customer support tools across multiple microfrontends. Published features for administration, labelling tools and more, providing company-wide visibility into users, departments, roles, and permissions. Crafted accessible web applications, ensuring inclusivity for users with diverse needs.",
   },
 ];
 
