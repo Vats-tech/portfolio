@@ -50,6 +50,17 @@ const Header = () => {
               <Link href={option.path}>{option.logo}</Link>
             </div>
           ))}
+          <div>
+            <a
+              href="VatsReumse-12-13-2024.pdf"
+              download="SaurabhVatsResume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:bg-[rgb(140,52,255)] w-[36px] h-[36px] flex justify-center items-center rounded-full cursor-pointer"
+            >
+              <Icons id="download" />
+            </a>
+          </div>
         </div>
       </nav>
     </header>
