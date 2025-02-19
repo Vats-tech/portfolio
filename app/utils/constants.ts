@@ -109,5 +109,6 @@ export const USER_DETAILS = {
   EMAIL: "kumarvats417@gmail.com",
   POSITION: "Software Engineer ( FE )",
   LINKEDIN: "https://www.linkedin.com/in/saurabh-vats-039b62169/",
+  GITHUB: "https://github.com/Vats-tech",
   ADDRESS: "Pune",
 };

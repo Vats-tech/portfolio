@@ -29,6 +29,24 @@ const LeftPanel = () => {
   };
 
   /**
+   * User links
+   */
+  const userLinks = [
+    {
+      id: "github",
+      link: USER_DETAILS.GITHUB,
+    },
+    {
+      id: "linkedin",
+      link: USER_DETAILS.LINKEDIN,
+    },
+    {
+      id: "mail",
+      link: `mailto:${USER_DETAILS.EMAIL}`,
+    },
+  ];
+
+  /**
    * Hook to format messages
    */
   const ts = useTs();
@@ -72,20 +90,13 @@ const LeftPanel = () => {
               />
             </a>
           </span>
-          <span>
-            <a href={USER_DETAILS.LINKEDIN} target="_blank" rel="noreferrer">
-              <Icons id="linkedin" />
-            </a>
-          </span>
-          <span>
-            <a
-              href={`mailto:${USER_DETAILS.EMAIL}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icons id="mail" width="23" height="23" />
-            </a>
-          </span>
+          {userLinks.map((item, index) => (
+            <span key={index}>
+              <a href={item.link} target="_blank" rel="noreferrer">
+                <Icons id={item.id} />
+              </a>
+            </span>
+          ))}
         </div>
 
         <Link href="/thoughts">
