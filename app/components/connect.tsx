@@ -1,9 +1,10 @@
 "use client"; // This ensures LeftPanel is client-side
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTs } from "../utils/useTs";
 import { defineMessage } from "../utils/util";
 import emailjs from "@emailjs/browser";
+import Icons from "./icons";
 
 const connect_module_heading = defineMessage(
   "LET&apos;S WORK <span>TOGETHER</span>"
@@ -45,13 +46,27 @@ interface ConnectTypes {
 
 const Connect = ({ ...props }: ConnectTypes) => {
   const ts = useTs();
+  const [isSending, setIsSending] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [buttonLabel, setButtonLabel] = useState(ts(submit_button_label));
+
+  /**
+   * Reset button label to default after 2 seconds.
+   */
+  const resetButtonLabelToDefault = () => {
+    // TODO - Replace with a toast
+    timeoutRef.current = setTimeout(() => {
+      setButtonLabel(ts(submit_button_label));
+      setIsSending(false);
+    }, 3000);
+  };
 
   const form = useRef<HTMLFormElement | null>(null);
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!form.current) return;
-
+    setIsSending(true);
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -61,15 +76,26 @@ const Connect = ({ ...props }: ConnectTypes) => {
       )
       .then(
         () => {
-          alert("Message Sent Successfully!"); // [TODO] - Replace with a toast
+          setButtonLabel("Message Sent Successfully!");
           form.current?.reset(); // Clear the form
+          resetButtonLabelToDefault();
         },
         (error) => {
           console.error("Error:", error);
-          alert("Failed to send message. Try again later."); // [TODO] -Replace with a toast
+          setButtonLabel("Failed to send message. Try again later.");
+          alert("Failed to send message. Try again later.");
+          resetButtonLabelToDefault();
         }
       );
   };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current); // clear the timeout when the component is unmounted
+      }
+    };
+  }, []);
 
   return (
     <div className={props.styles}>
@@ -115,8 +141,20 @@ const Connect = ({ ...props }: ConnectTypes) => {
               className="mt-3 rounded-md bg-zinc-700 w-full p-2"
             ></textarea>
           </div>
-          <button className="w-full p-2 rounded-md  bg-[rgb(140,52,255)]">
-            {ts(submit_button_label)}
+          <button
+            className="w-full flex justify-center items-center gap-3 p-2 rounded-md bg-[rgb(140,52,255)] disabled:bg-slate-800 disabled:text-slate-300"
+            type="submit"
+            disabled={isSending}
+          >
+            {buttonLabel}
+            {isSending && (
+              <Icons
+                id="circle"
+                width="10"
+                height="10"
+                classes="animate-spin fill-white bg-white"
+              />
+            )}
           </button>
         </div>
       </form>

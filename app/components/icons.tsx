@@ -10,7 +10,7 @@ const Icons = ({ id, classes, width = "20", height = "20" }: IconsType) => {
     <svg
       width={width}
       height={height}
-      className={classes}
+      className={`${classes} hover:scale-110 `}
       fill="currentColor"
       viewBox="0 0 16 16"
     >
