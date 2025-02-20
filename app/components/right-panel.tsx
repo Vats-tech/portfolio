@@ -8,7 +8,8 @@ import { defineMessage } from "../utils/util";
 
 const right_panel_title = defineMessage("SOFTWARE <span>ENGINEER</span>");
 const right_panel_subtitle = defineMessage(
-  "Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products."
+  "Passionate frontend developer crafting seamless digital experiences, solving complex problems, and building user-friendly solutions with clean, efficient code."
+  // "Passionate frontend developer dedicated to solving complex problems with clean, efficient code. I enjoy creating seamless digital experiences and optimizing performance for better user interactions. Constantly learning and innovating to bring ideas to life!"
 );
 
 const work_exp_details = defineMessage(
@@ -61,7 +62,7 @@ const RightPanel = () => {
         className="right-panel-heading text-[54px] leading-[54px] sm:text-[80px] sm:leading-[80px] md:text-[100px] md:leading-[100px] font-black"
         dangerouslySetInnerHTML={{ __html: ts(right_panel_title) }}
       />
-      <p className="text-xl mt-4 lg:w-[480px] text-zinc-500">
+      <p className="text-xl mt-4 lg:w-[540px] text-zinc-500">
         {ts(right_panel_subtitle)}
       </p>
       {numericModule}

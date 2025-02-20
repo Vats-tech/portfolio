@@ -11,14 +11,14 @@ const headerOptions = [
     logo: <Icons id="home" />,
   },
   {
-    name: "projects",
-    path: "/projects",
-    logo: <Icons id="projects" />,
-  },
-  {
     name: "experience",
     path: "/experience",
     logo: <Icons id="experience" />,
+  },
+  {
+    name: "projects",
+    path: "/projects",
+    logo: <Icons id="projects" />,
   },
   {
     name: "tools",
@@ -58,7 +58,7 @@ const Header = () => {
               rel="noreferrer"
               className="hover:bg-[rgb(140,52,255)] w-[36px] h-[36px] flex justify-center items-center rounded-full cursor-pointer"
             >
-              <Icons id="download" />
+              <Icons id="download" classes="animate-bounce" />
             </a>
           </div>
         </div>

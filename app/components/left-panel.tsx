@@ -60,14 +60,14 @@ const LeftPanel = () => {
   );
 
   return showLeftPanel() ? (
-    <div className="test-left w-full lg:w-[29%] lg:sticky top-10 bg-zinc-950 border border-zinc-700 rounded-xl flex flex-col items-center justify-center gap-8 overflow-hidden h-full">
-      <div className="w-full p-12 lg:p-5 flex justify-center items-center">
+    <div className="test-left w-full lg:w-[29%] lg:sticky top-10 bg-zinc-950 border border-zinc-700 rounded-xl flex flex-col items-center justify-center gap-5 overflow-hidden h-full">
+      <div className="w-full p-8 mt-5 lg:p-5 flex justify-center items-center">
         <Image
-          className="w-60 h-60 object-cover rounded-full"
+          className="w-64 h-64 object-cover rounded-full"
           src="/ImageVats.jpeg"
           alt="Next.js Logo"
-          width={240}
-          height={240}
+          width={256}
+          height={256}
         />
       </div>
       <div
@@ -100,7 +100,7 @@ const LeftPanel = () => {
         </div>
 
         <Link href="/thoughts">
-          <button className="p-2 px-7 bg-[rgb(140,52,255)] rounded-md border border-slate-800">
+          <button className="p-2 px-7 bg-[rgb(140,52,255)] rounded-md border border-slate-800 hover:scale-105 transition-transform duration-500">
             {ts(lets_talk_btn_label)}
           </button>
         </Link>
