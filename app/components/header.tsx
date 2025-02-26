@@ -52,11 +52,11 @@ const Header = () => {
           ))}
           <div>
             <a
-              href="VatsReumse-12-13-2024.pdf"
+              href="SaurabhVatsResume.pdf"
               download="SaurabhVatsResume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="hover:bg-[rgb(140,52,255)] w-[36px] h-[36px] flex justify-center items-center rounded-full cursor-pointer"
+              className="hover:bg-[rgb(140,52,255)] w-[36px] h-[36px] flex justify-center items-center rounded-md cursor-pointer"
             >
               <Icons id="download" classes="animate-bounce" />
             </a>

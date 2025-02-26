@@ -9,12 +9,17 @@ interface ProjectModuleTypes {
   image: string;
   tags?: string[];
 }
-const ProjectModule = ({ name, title, description }: ProjectModuleTypes) => {
+const ProjectModule = ({
+  name,
+  title,
+  description,
+  image,
+}: ProjectModuleTypes) => {
   return (
     <div className="group mt-5 h-auto lg:h-[200px] hover:bg-[rgb(140,52,255)] w-full flex items-center rounded-md gap-4 border border-zinc-500 relative">
       <Image
-        src={"/hue-2.png"}
-        className="hidden lg:block h-[100%] object-cover rounded-l-md p-[1px]"
+        src={image}
+        className="hidden lg:block h-[100%] object-cover rounded-l-md p-[1px] lg:w-72"
         alt="Next.js Logo"
         width={200}
         height={600}

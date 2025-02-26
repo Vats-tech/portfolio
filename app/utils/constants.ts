@@ -35,7 +35,7 @@ export const projectDetails = [
     description:
       "Cookies Manager is a browser extension available for Chrome that allows users to manage and delete cookies stored on their browser for any tab.It also includes local storage manager.",
     link: "/test",
-    image: "/cookies-manager.png",
+    image: "/hue-2.png",
   },
   {
     name: "HueFinder",
@@ -43,7 +43,7 @@ export const projectDetails = [
     description:
       "HueFinder is a tool for exploring colors. Users can search for colors, extract them from images by hovering, and convert between RGB and HEX formats effortlessly.",
     link: "/test",
-    image: "/huefinder.png",
+    image: "/hue-2.png",
   },
   {
     name: "Portfolio",
@@ -51,7 +51,7 @@ export const projectDetails = [
     description:
       "Portfolio is a personal website that showcases your work, skills, and experience. It serves as a digital resume and portfolio, allowing you to highlight your projects, achievements, and expertise.",
     link: "/test",
-    image: "/portfolio.png",
+    image: "/PortfolioImage.jpeg",
   },
 ];
 

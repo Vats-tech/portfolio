@@ -22,7 +22,7 @@ export default function ProjectPage({ classes }: ProjectPageTypes) {
         dangerouslySetInnerHTML={{ __html: ts(project_page_heading) }}
       ></h1>
       <div
-        className={`flex flex-wrap justify-between gap-4 mt-8 ${montserrat.className}`}
+        className={`flex flex-wrap justify-between gap-4 mt-4 ${montserrat.className}`}
       >
         {projectDetails.map((project, index) => (
           <ProjectModule
