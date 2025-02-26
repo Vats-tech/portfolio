@@ -5,24 +5,21 @@ import ProjectPage from "../projects/page";
 import ToolsPage from "../tools/page";
 import { useTs } from "../utils/useTs";
 import { defineMessage } from "../utils/util";
+import Counter from "./counter";
 
 const right_panel_title = defineMessage("SOFTWARE <span>ENGINEER</span>");
 const right_panel_subtitle = defineMessage(
-  "Passionate frontend developer crafting seamless digital experiences, solving complex problems, and building user-friendly solutions with clean, efficient code."
+  "Passionate developer crafting seamless digital experiences, solving complex problems, and building user-friendly solutions with clean, efficient code."
   // "Passionate frontend developer dedicated to solving complex problems with clean, efficient code. I enjoy creating seamless digital experiences and optimizing performance for better user interactions. Constantly learning and innovating to bring ideas to life!"
 );
 
-const work_exp_details = defineMessage(
-  "<h1>+{count}</h1><p>YEARS OF</p><p>EXPERIENCE</p>"
-);
+const work_exp_details = defineMessage("<p>YEARS OF</p><p>EXPERIENCE</p>");
 
 const problem_solved_details = defineMessage(
-  "<h1>+{count}</h1><p>CODING PROBLEM</p><p>SOLVED</p>"
+  "<p>CODING PROBLEM</p><p>SOLVED</p>"
 );
 
-const project_details = defineMessage(
-  "<h1>+{count}</h1><p>PROJECTS</p><p>COMPLETED</p>"
-);
+const project_details = defineMessage("<p>PROJECTS</p><p>COMPLETED</p>");
 
 const workDetails = [
   {
@@ -42,16 +39,34 @@ const workDetails = [
 const RightPanel = () => {
   const ts = useTs();
 
+  const toolsUsedDetails = (item: {
+    key: {
+      [x: string]: string;
+    };
+    value: number;
+  }) => {
+    return (
+      <>
+        <h1>
+          <Counter end={item.value} />
+        </h1>
+        <div
+          className="[&>p]:text-zinc-500"
+          dangerouslySetInnerHTML={{ __html: ts(item.key) }}
+        ></div>
+      </>
+    );
+  };
+
   const numericModule = (
     <div className="flex justify-between flex-wrap mt-8 ">
       {workDetails.map((item, index) => (
         <div
-          className="right-panel-work-details p-4 [&>p]:text-zinc-500 [&>h1]:text-[60px] [&>h1]:leading-[60px] [&>h1]:md:text-[100px] [&>h1]:md:leading-[100px] [&>h1]:font-extrabold"
+          className="right-panel-work-details p-4 [&>h1]:text-[60px] [&>h1]:leading-[60px] [&>h1]:md:text-[100px] [&>h1]:md:leading-[100px] [&>h1]:font-extrabold"
           key={index}
-          dangerouslySetInnerHTML={{
-            __html: ts(item.key, { count: item.value }),
-          }}
-        ></div>
+        >
+          {toolsUsedDetails(item)}
+        </div>
       ))}
     </div>
   );
