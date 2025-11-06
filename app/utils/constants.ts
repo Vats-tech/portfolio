@@ -22,7 +22,7 @@ export const experienceDetails = [
     role: "SDE",
     field: "LinkedIn | Social Media",
     from: "July 2021",
-    to: "October 2023",
+    to: "September 2023",
     description:
       "Developed LinkedIn’s customer support tools across multiple microfrontends. Published features for administration, labelling tools and more, providing company-wide visibility into users, departments, roles, and permissions. Crafted accessible web applications, ensuring inclusivity for users with diverse needs.",
   },
@@ -35,7 +35,7 @@ export const projectDetails = [
     description:
       "Cookies Manager is a browser extension available for Chrome that allows users to manage and delete cookies stored on their browser for any tab.It also includes local storage manager.",
     link: "/test",
-    image: "/hue-2.png",
+    image: "/cookies-mng-img.png",
   },
   {
     name: "HueFinder",
@@ -57,11 +57,35 @@ export const projectDetails = [
 
 export const toolsUsed = [
   {
+    name: "JavaScript",
+    description: "Programming Language",
+    logo: "/logo-javascript.svg",
+  },
+  {
+    name: "TypeScript",
+    description: "Programming Language",
+    logo: "/typescript.svg",
+  },
+  {
+    name: "Java",
+    description: "Programming Language",
+    logo: "/java-14.svg",
+  },
+  {
+    name: "Spring Boot",
+    description: "Java Framework",
+    logo: "/spring-boot.svg",
+  },
+  {
+    name: "MySQL",
+    description: "Database",
+    logo: "/database.svg",
+  },
+  {
     name: "React",
     description: "JavaScript Library",
     logo: "/react-logo.svg",
   },
-
   {
     name: "Next.js",
     description: "React Framework",
@@ -71,16 +95,6 @@ export const toolsUsed = [
     name: "Ember.js",
     description: "JavaScript Framework",
     logo: "/ember.svg",
-  },
-  {
-    name: "JavaScript",
-    description: "Programming Language",
-    logo: "/logo-javascript.svg",
-  },
-  {
-    name: "TypeScript",
-    description: "Programming Language",
-    logo: "/typescript.svg",
   },
   {
     name: "TilwindCSS",
@@ -97,17 +111,15 @@ export const toolsUsed = [
     description: "Module Bundler",
     logo: "/webpack.svg",
   },
-  {
-    name: "Java",
-    description: "Programming Language",
-    logo: "/java-14.svg",
-  },
 ];
 
+/**
+ * Defines user details for the portfolio.
+ */
 export const USER_DETAILS = {
   NAME: "Saurabh Vats",
   EMAIL: "kumarvats417@gmail.com",
-  POSITION: "Software Engineer ( FE )",
+  POSITION: "Software Engineer",
   LINKEDIN: "https://www.linkedin.com/in/saurabh-vats-039b62169/",
   GITHUB: "https://github.com/Vats-tech",
   ADDRESS: "Pune",
