@@ -52,8 +52,8 @@ const Header = () => {
           ))}
           <div>
             <a
-              href="SaurabhVatsResume.pdf"
-              download="SaurabhVatsResume.pdf"
+              href="SaurabhVatsResume_FullStack.pdf"
+              download="SaurabhVatsResume_FullStack.pdf"
               target="_blank"
               rel="noreferrer"
               className="hover:bg-[rgb(140,52,255)] w-[36px] h-[36px] flex justify-center items-center rounded-md cursor-pointer"
